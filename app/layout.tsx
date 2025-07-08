@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/context/Theme";
-import Navbar from "@/components/navigation/navbar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default function GlobalLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -37,7 +36,6 @@ export default function RootLayout({
           defaultTheme="system"
           disableTransitionOnChange
         >
-          <Navbar />
           {children}
         </ThemeProvider>
       </body>
